@@ -7,10 +7,11 @@
 
 import Foundation
 
-    class ContentViewModel: ObservableObject {
-        @Published var person = [PersonContacts]()
-        @Published var addButtonTapped = false
-        
-        
-    }
+class ViewModel: ObservableObject {
+    @Published var person = [PersonContacts]()
+    
+    @Published var addButtonTapped = false
+    @Published var showingImagePicker = false
+    
+}
 
