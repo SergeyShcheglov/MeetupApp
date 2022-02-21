@@ -21,7 +21,7 @@ extension Contacts {
     @NSManaged public var lastName: String?
     @NSManaged public var company: String?
     @NSManaged public var notes: String?
-    @NSManaged public var photo: Data?
+    @NSManaged public var photo: UUID?
     @NSManaged public var dateAdded: Date?
 
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0151AF3627C38B75009FC2B2 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0151AF3527C38B75009FC2B2 /* ImageSaver.swift */; };
+		0151AF3827C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0151AF3727C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift */; };
 		01E01ABB27BF82DE0070C7FD /* MeetupAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01ABA27BF82DE0070C7FD /* MeetupAppApp.swift */; };
 		01E01ABD27BF82DE0070C7FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01ABC27BF82DE0070C7FD /* ContentView.swift */; };
 		01E01ABF27BF82E00070C7FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E01ABE27BF82E00070C7FD /* Assets.xcassets */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0151AF3527C38B75009FC2B2 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		0151AF3727C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		01E01AB727BF82DE0070C7FD /* MeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E01ABA27BF82DE0070C7FD /* MeetupAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupAppApp.swift; sourceTree = "<group>"; };
 		01E01ABC27BF82DE0070C7FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 				01E01ACA27BF980B0070C7FD /* ViewModel.swift */,
 				01E01ABC27BF82DE0070C7FD /* ContentView.swift */,
 				01E01AEA27BFAE9E0070C7FD /* AddContactView.swift */,
-				0151AF3527C38B75009FC2B2 /* ImageSaver.swift */,
+				0151AF3727C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift */,
 				01E01AE627BFA8A60070C7FD /* DetailView.swift */,
 				01E01AF327C23CCD0070C7FD /* DataController.swift */,
 				01E01AC827BF95E80070C7FD /* PersonContacts.swift */,
@@ -174,7 +174,7 @@
 				01E01AE927BFA9F10070C7FD /* ImagePicker.swift in Sources */,
 				01E01AF427C23CCD0070C7FD /* DataController.swift in Sources */,
 				01E01AEE27C23B180070C7FD /* Contacts.xcdatamodeld in Sources */,
-				0151AF3627C38B75009FC2B2 /* ImageSaver.swift in Sources */,
+				0151AF3827C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift in Sources */,
 				01E01AE727BFA8A60070C7FD /* DetailView.swift in Sources */,
 				01E01AEB27BFAE9E0070C7FD /* AddContactView.swift in Sources */,
 				01E01AF227C23CBE0070C7FD /* Contacts+CoreDataProperties.swift in Sources */,
