@@ -6,22 +6,29 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     @StateObject private var contentViewModel = ViewModel()
     
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.dateAdded)]) var contacts: FetchedResults<Contacts>
+    @Environment(\.managedObjectContext) var context
     
     var body: some View {
         NavigationView {
             NavigationLink {
                 DetailView()
             } label: {
-                List(contentViewModel.person, id: \.id) { person in
+                List(contacts, id: \.id) { contact in
                     HStack {
-                        Image(person.photo ?? "person.circle")
+                        Image(systemName: "person.circle")
+                            .resizable()
+                            .frame(maxWidth: UIScreen.main.bounds.width * 0.1)
                         
                         VStack(alignment: .leading) {
-                            Text("\(person.firstName) \(person.lastName)")
+                            Text(contact.firstName ?? "noname")
+                            + Text(" ")
+                            + Text(contact.lastName ?? "")
                             Text("some descritpion")
                         }
                     }

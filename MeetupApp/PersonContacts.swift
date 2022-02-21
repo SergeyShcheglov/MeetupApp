@@ -9,9 +9,10 @@ import Foundation
 
 struct PersonContacts: Identifiable {
     let id: UUID
-    var firstName: String
-    var lastName: String
+    var firstName: String?
+    var lastName: String?
     var company: String?
+    var notes: String?
     
     var photo: String?
 }

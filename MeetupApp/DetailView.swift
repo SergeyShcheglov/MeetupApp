@@ -13,6 +13,7 @@ struct DetailView: View {
     var body: some View {
         VStack {
             Image(systemName: "heart")
+            Text("Full name")
         }
     }
 }

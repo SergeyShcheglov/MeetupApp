@@ -10,12 +10,19 @@ import PhotosUI
 
 struct AddContactView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var context
     
     @ObservedObject var viewModel = ViewModel()
     
     @State private var image = Image(systemName: "person.circle.fill")
     @State private var inputImage: UIImage?
     @State private var showingImagePicker = false
+    
+    @State private var firstName = ""
+    @State private var lastName = ""
+    @State private var company = ""
+    @State private var notes = ""
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -37,11 +44,14 @@ struct AddContactView: View {
                 
                 Form {
                     Section {
-                        //                    TextField("First name", text: viewModel.person[id].firstName)
-                        //                TextField("First name", text: viewModel.person.lastName)
-                        //                TextField("First name", text: viewModel.person.company)
-                        Text("sample")
-                        Text("sample 222")
+                        TextField("First name", text: $firstName)
+                        TextField("Last name", text: $lastName)
+                    }
+                    
+                    Section {
+                        TextField("Company", text: $company)
+                        TextField("Some notes", text: $notes)
+                            .frame(height: 100)
                     }
                 }
                 
@@ -54,27 +64,44 @@ struct AddContactView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Save", action: {} ) }
+                    Button("Save", action: { saveContact() } )
+                        .disabled(firstName == "" && lastName == "" ? true : false)
+                }
+                
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                       dismiss()
-                    }
+                    Button("Cancel") { dismiss() }
                 }
             }
             
         }
     }
     
-    
-    
     func loadImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
     }
+    
+    func saveContact() {
+        let newContact = Contacts(context: context)
+        newContact.id = UUID()
+        newContact.firstName = firstName
+        newContact.lastName = lastName
+        newContact.company = company
+        newContact.notes = notes
+        newContact.dateAdded = Date.now
+//        newContact.photo =
+        
+        do {
+            try context.save()
+        } catch {
+            print("Couldn't save to CoreData: \(error.localizedDescription)")
+        }
+        dismiss()
+    }
 }
 
-//struct AddContactView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddContactView()
-//    }
-//}
+struct AddContactView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddContactView()
+    }
+}
