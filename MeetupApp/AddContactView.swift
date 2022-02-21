@@ -23,6 +23,8 @@ struct AddContactView: View {
     @State private var company = ""
     @State private var notes = ""
     
+    let savePaths = FileManager.documentDirectory.appendingPathComponent("SavedPhotos")
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -79,9 +81,12 @@ struct AddContactView: View {
     func loadImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
+        
     }
     
     func saveContact() {
+        let uuid = UUID()
+        
         let newContact = Contacts(context: context)
         newContact.id = UUID()
         newContact.firstName = firstName
@@ -89,15 +94,22 @@ struct AddContactView: View {
         newContact.company = company
         newContact.notes = notes
         newContact.dateAdded = Date.now
-//        newContact.photo =
+        newContact.photo = uuid
         
         do {
+            if let image = UIImage(named: "SavedPhotos") {
+                if let jpegData = image.jpegData(compressionQuality: 0.8) {
+                    try? jpegData.write(to: savePaths.appendingPathComponent(uuid.uuidString), options: [.atomic, .completeFileProtection])
+                }
+            }
             try context.save()
         } catch {
             print("Couldn't save to CoreData: \(error.localizedDescription)")
         }
         dismiss()
     }
+    
+
 }
 
 struct AddContactView_Previews: PreviewProvider {
