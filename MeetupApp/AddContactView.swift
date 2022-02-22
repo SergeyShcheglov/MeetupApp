@@ -36,6 +36,7 @@ struct AddContactView: View {
                         
                         image
                             .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .clipShape(Circle())
                             .clipped()
                     }

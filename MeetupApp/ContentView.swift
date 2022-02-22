@@ -27,6 +27,7 @@ struct ContentView: View {
                         HStack {
                             getPhotoFrom(uuid: contact.wrappedPhotoId)
                                 .resizable()
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 50, height: 50)
                                 .clipped()
                                 .clipShape(Circle())

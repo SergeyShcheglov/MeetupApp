@@ -16,6 +16,7 @@ struct DetailView: View {
         VStack {
             getPhotoFrom(uuid: contact.wrappedPhotoId)
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(maxHeight: UIScreen.main.bounds.height * 0.6)
             Text("\(contact.firstName ?? "") \(contact.lastName ?? "")")
             Spacer()
