@@ -23,7 +23,8 @@ struct AddContactView: View {
     @State private var company = ""
     @State private var notes = ""
     
-    let savePaths = FileManager.documentDirectory.appendingPathComponent("SavedPhotos")
+    let savePaths = FileManager.documentDirectory
+    
     
     var body: some View {
         NavigationView {
@@ -32,10 +33,10 @@ struct AddContactView: View {
                     ZStack {
                         Circle()
                             .stroke(Color.purple, lineWidth: 4)
+                        
                         image
                             .resizable()
                             .clipShape(Circle())
-                        
                     }
                     .contentShape(Circle())
                     .onTapGesture {
@@ -81,13 +82,12 @@ struct AddContactView: View {
     func loadImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
-        
     }
     
     func saveContact() {
         let uuid = UUID()
         
-        let newContact = Contacts(context: context)
+        let newContact = ContactsModel(context: context)
         newContact.id = UUID()
         newContact.firstName = firstName
         newContact.lastName = lastName
@@ -97,10 +97,10 @@ struct AddContactView: View {
         newContact.photo = uuid
         
         do {
-            if let image = UIImage(named: "SavedPhotos") {
-                if let jpegData = image.jpegData(compressionQuality: 0.8) {
-                    try? jpegData.write(to: savePaths.appendingPathComponent(uuid.uuidString), options: [.atomic, .completeFileProtection])
-                }
+            if let jpegData = inputImage?.jpegData(compressionQuality: 0.8) {
+                try? jpegData.write(to: savePaths.appendingPathComponent(uuid.uuidString), options: [.atomic, .completeFileProtection])
+            } else {
+                print("couldn't save to docs")
             }
             try context.save()
         } catch {
@@ -108,8 +108,6 @@ struct AddContactView: View {
         }
         dismiss()
     }
-    
-
 }
 
 struct AddContactView_Previews: PreviewProvider {
