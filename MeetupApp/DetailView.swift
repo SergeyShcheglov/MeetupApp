@@ -16,6 +16,8 @@ struct DetailView: View {
             Text("Full name")
         }
     }
+    
+    
 }
 
 struct DetailView_Previews: PreviewProvider {
