@@ -22,7 +22,7 @@ struct ContentView: View {
             List {
                 ForEach(contacts, id: \.id) { contact in
                     NavigationLink {
-                        DetailView()
+                        DetailView(contact: contact)
                     } label: {
                         HStack {
                             getPhotoFrom(uuid: contact.wrappedPhotoId)
