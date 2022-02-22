@@ -37,6 +37,7 @@ struct AddContactView: View {
                         image
                             .resizable()
                             .clipShape(Circle())
+                            .clipped()
                     }
                     .contentShape(Circle())
                     .onTapGesture {
