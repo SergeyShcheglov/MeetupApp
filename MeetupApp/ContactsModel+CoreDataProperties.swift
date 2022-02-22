@@ -24,6 +24,9 @@ extension ContactsModel {
     @NSManaged public var company: String?
     @NSManaged public var notes: String?
 
+    public var wrappedPhotoId: UUID {
+        photo ?? UUID()
+    }
 }
 
 extension ContactsModel : Identifiable {
