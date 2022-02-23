@@ -9,8 +9,8 @@ import PhotosUI
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
-    var sourceType: UIImagePickerController.SourceType = .camera
     @Binding var image: UIImage?
+    var sourceType: UIImagePickerController.SourceType = .camera
     
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         var parent: ImagePicker
@@ -19,25 +19,17 @@ struct ImagePicker: UIViewControllerRepresentable {
             self.parent = parent
         }
         
-        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             picker.dismiss(animated: true)
-            
-            guard let provider = results.first?.itemProvider else { return }
-            
-            if provider.canLoadObject(ofClass: UIImage.self) {
-                provider.loadObject(ofClass: UIImage.self) { image, _ in
-                    self.parent.image = image as? UIImage
-                }
+
+            if let uiImage = info[.originalImage] as? UIImage {
+                print("picked")
+                parent.image = uiImage
             }
         }
     }
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        var config = PHPickerConfiguration()
-        config.filter = .images
-        
-//        let picker = PHPickerViewController(configuration: config)
-//        picker.delegate = context.coordinator
         
         let picker = UIImagePickerController()
         picker.allowsEditing = false
