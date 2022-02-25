@@ -16,7 +16,6 @@ struct AddContactView: View {
     
     @State private var image = Image(systemName: "person.circle.fill")
     @State private var inputImage: UIImage?
-    @State private var showingImagePicker = false
     
     @State private var firstName = ""
     @State private var lastName = ""
@@ -24,7 +23,7 @@ struct AddContactView: View {
     @State private var notes = ""
     
     let savePaths = FileManager.documentDirectory
-    
+        
     
     var body: some View {
         NavigationView {
@@ -42,7 +41,9 @@ struct AddContactView: View {
                     }
                     .contentShape(Circle())
                     .onTapGesture {
-                        showingImagePicker = true
+                        viewModel.source = .camera
+                        viewModel.showPhotoPicker()
+//                        showingImagePicker = true
                     }
                     Text("Add Photo")
                 }
@@ -59,11 +60,18 @@ struct AddContactView: View {
                             .frame(height: 100)
                     }
                 }
-                
-                .onChange(of: inputImage) { _ in loadImage() }
-                .sheet(isPresented: $showingImagePicker) {
-                    ImagePicker(image: $inputImage)
+                .alert("Error", isPresented: $viewModel.showCameraAlert) {
+                    viewModel.cameraError?.buttonOK
+                    viewModel.cameraError?.buttonSettings
+                } message: {
+                    Text(viewModel.cameraError?.message ?? "")
                 }
+                .sheet(isPresented: $viewModel.showingImagePicker) {
+                    ImagePicker(image: $inputImage)
+                        .ignoresSafeArea()
+                }
+                .onChange(of: inputImage) { _ in loadImage() }
+
             }
             .navigationTitle("New contact")
             .navigationBarTitleDisplayMode(.inline)
