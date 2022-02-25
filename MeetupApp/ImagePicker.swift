@@ -23,7 +23,6 @@ struct ImagePicker: UIViewControllerRepresentable {
             picker.dismiss(animated: true)
 
             if let uiImage = info[.originalImage] as? UIImage {
-                print("picked")
                 parent.image = uiImage
             }
         }
