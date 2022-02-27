@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import LocalAuthentication
+import MapKit
 
 struct DetailView: View {
     var contact: ContactsModel
+    let locationFetcher = LocationFetcher()
     
     let savePaths = FileManager.documentDirectory
     
@@ -20,6 +23,18 @@ struct DetailView: View {
                 .frame(maxHeight: UIScreen.main.bounds.height * 0.6)
             Text("\(contact.firstName ?? "") \(contact.lastName ?? "")")
             Spacer()
+            
+//            Map() { location in
+//                MapAnnotation(coordinate: locationFetcher.lastKnownLocation? ?? CLLocationCoordinate2D(latitude: -51, longitude: -2)) {
+//                    VStack {
+//                        Image(systemName: "star.circle")
+//                            .resizable()
+//                            .foregroundColor(.red)
+//                            .frame(width: 44, height: 44)
+//
+//                    }
+//                }
+//            }
         }
     }
     func getPhotoFrom(uuid: UUID) -> Image {
@@ -31,8 +46,9 @@ struct DetailView: View {
     
 }
 
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailView()
-//    }
-//}
+struct DetailView_Previews: PreviewProvider {
+    static let example = ContactsModel()
+    static var previews: some View {
+        DetailView(contact: example)
+    }
+}
