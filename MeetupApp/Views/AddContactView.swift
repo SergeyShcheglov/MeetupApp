@@ -35,15 +35,14 @@ struct AddContactView: View {
                         
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
+//                            .aspectRatio(contentMode: .fit)
                             .clipped()
+                            .clipShape(Circle())
                     }
                     .contentShape(Circle())
                     .onTapGesture {
                         viewModel.source = .camera
                         viewModel.showPhotoPicker()
-//                        showingImagePicker = true
                     }
                     Text("Add Photo")
                 }
