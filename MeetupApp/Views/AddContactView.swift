@@ -24,6 +24,7 @@ struct AddContactView: View {
     
     let savePaths = FileManager.documentDirectory
         
+    let locationFetcher = LocationFetcher()
     
     var body: some View {
         NavigationView {
@@ -68,6 +69,9 @@ struct AddContactView: View {
                 .sheet(isPresented: $viewModel.showingImagePicker) {
                     ImagePicker(image: $inputImage)
                         .ignoresSafeArea()
+                        .onAppear {
+                            locationFetcher.start()
+                        }
                 }
                 .onChange(of: inputImage) { _ in loadImage() }
 
@@ -104,6 +108,9 @@ struct AddContactView: View {
         newContact.notes = notes
         newContact.dateAdded = Date.now
         newContact.photo = uuid
+        
+        newContact.latitude = locationFetcher.lastKnownLocation?.latitude ?? 23.3
+        newContact.longitude = locationFetcher.lastKnownLocation?.longitude ?? 34.1
         
         do {
             if let jpegData = inputImage?.jpegData(compressionQuality: 0.8) {
