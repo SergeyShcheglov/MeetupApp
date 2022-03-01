@@ -26,6 +26,13 @@ extension ContactsModel {
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
 
+    public var wrappedFirstName: String {
+        firstName ?? "Unknown Name"
+    }
+
+    public var wrappedPhotoId: UUID {
+        photo ?? UUID()
+    }
 }
 
 extension ContactsModel : Identifiable {
