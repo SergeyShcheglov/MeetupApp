@@ -24,18 +24,9 @@ struct DetailView: View {
             Text("\(contact.firstName ?? "") \(contact.lastName ?? "")")
             Spacer()
             
-//            Map() { location in
-//                MapAnnotation(coordinate: locationFetcher.lastKnownLocation? ?? CLLocationCoordinate2D(latitude: -51, longitude: -2)) {
-//                    VStack {
-//                        Image(systemName: "star.circle")
-//                            .resizable()
-//                            .foregroundColor(.red)
-//                            .frame(width: 44, height: 44)
-//
-//                    }
-//                }
-//            }
-        }
+            MapView(personContact: contact)
+                .padding()
+            }
     }
     func getPhotoFrom(uuid: UUID) -> Image {
         let uuidString = uuid.uuidString
@@ -45,10 +36,10 @@ struct DetailView: View {
     }
     
 }
-
-struct DetailView_Previews: PreviewProvider {
-    static let example = ContactsModel()
-    static var previews: some View {
-        DetailView(contact: example)
-    }
-}
+//
+//struct DetailView_Previews: PreviewProvider {
+//    static let example = ContactsModel()
+//    static var previews: some View {
+//        DetailView(contact: example)
+//    }
+//}
