@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @StateObject private var contentViewModel = ContentViewModel()
+    @StateObject private var vm = ViewModel()
     
     @FetchRequest(sortDescriptors: [SortDescriptor(\.dateAdded)]) var contacts: FetchedResults<ContactsModel>
     @Environment(\.managedObjectContext) var context
@@ -25,7 +25,7 @@ struct ContentView: View {
                         DetailView(contact: contact)
                     } label: {
                         HStack {
-                            getPhotoFrom(uuid: contact.wrappedPhotoId)
+                            vm.getPhotoFrom(uuid: contact.wrappedPhotoId)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 50, height: 50)
@@ -48,22 +48,16 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem {
                     Button(action: {
-                        contentViewModel.addButtonTapped = true},
+                        vm.addButtonTapped = true},
                            label: {
                         Image(systemName: "plus")
                     })
                 }
             }
-            .sheet(isPresented: $contentViewModel.addButtonTapped) {
+            .sheet(isPresented: $vm.addButtonTapped) {
                 AddContactView()
             }
         }
-    }
-    func getPhotoFrom(uuid: UUID) -> Image {
-        let uuidString = uuid.uuidString
-        guard let data = try? Data(contentsOf: savePaths.appendingPathComponent(uuidString)) else { return Image(systemName: "person.crop.circle.badge.questionmark") }
-        guard let uiImage = UIImage(data: data, scale: 1.0) else { return Image(systemName: "person.crop.circle") }
-        return Image(uiImage: uiImage)
     }
 }
 

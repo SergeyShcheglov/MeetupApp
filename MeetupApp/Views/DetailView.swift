@@ -10,14 +10,14 @@ import LocalAuthentication
 import MapKit
 
 struct DetailView: View {
+    @ObservedObject var vm = ViewModel()
+
     var contact: ContactsModel
     let locationFetcher = LocationFetcher()
-    
-    let savePaths = FileManager.documentDirectory
-    
+        
     var body: some View {
         VStack {
-            getPhotoFrom(uuid: contact.wrappedPhotoId)
+            vm.getPhotoFrom(uuid: contact.wrappedPhotoId)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxHeight: UIScreen.main.bounds.height * 0.6)
@@ -28,13 +28,6 @@ struct DetailView: View {
                 .padding()
             }
     }
-    func getPhotoFrom(uuid: UUID) -> Image {
-        let uuidString = uuid.uuidString
-        guard let data = try? Data(contentsOf: savePaths.appendingPathComponent(uuidString)) else { return Image(systemName: "person.crop.circle.badge.questionmark") }
-        guard let uiImage = UIImage(data: data, scale: 1.0) else { return Image(systemName: "person.crop.circle") }
-        return Image(uiImage: uiImage)
-    }
-    
 }
 //
 //struct DetailView_Previews: PreviewProvider {

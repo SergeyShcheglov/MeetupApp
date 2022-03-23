@@ -5,10 +5,10 @@
 //  Created by Sergey Shcheglov on 18.02.2022.
 //
 
-import Foundation
+import SwiftUI
 import MapKit
 
-class ContentViewModel: ObservableObject {
+class ViewModel: ObservableObject {
     @Published var person = [PersonContacts]()
     
     @Published var addButtonTapped = false
@@ -16,6 +16,7 @@ class ContentViewModel: ObservableObject {
     @Published var showingImagePicker = false
     @Published var showCameraAlert = false
     @Published var cameraError: Picker.CameraErrorType?
+    let savePaths = FileManager.documentDirectory
     
     func showPhotoPicker() {
         do {
@@ -29,5 +30,11 @@ class ContentViewModel: ObservableObject {
         }
     }
     
+    func getPhotoFrom(uuid: UUID) -> Image {
+        let uuidString = uuid.uuidString
+        guard let data = try? Data(contentsOf: savePaths.appendingPathComponent(uuidString)) else { return Image(systemName: "person.crop.circle.badge.questionmark") }
+        guard let uiImage = UIImage(data: data, scale: 1.0) else { return Image(systemName: "person.crop.circle") }
+        return Image(uiImage: uiImage)
+    }
 }
 
