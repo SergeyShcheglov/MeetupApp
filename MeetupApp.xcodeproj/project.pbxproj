@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0111586D27EAF83500F78C8E /* AddContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0111586C27EAF83500F78C8E /* AddContactViewModel.swift */; };
+		01160E7E27CB7E450037F446 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160E7D27CB7E450037F446 /* Picker.swift */; };
+		01160E8327CB8EE00037F446 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160E8227CB8EE00037F446 /* LocationFetcher.swift */; };
 		0151AF3827C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0151AF3727C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift */; };
 		0151AF4227C3AA7C009FC2B2 /* ContactsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0151AF4027C3AA7C009FC2B2 /* ContactsModel.xcdatamodeld */; };
 		0151AF4527C3AAE1009FC2B2 /* ContactsModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0151AF4327C3AAE1009FC2B2 /* ContactsModel+CoreDataClass.swift */; };
 		0151AF4627C3AAE1009FC2B2 /* ContactsModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0151AF4427C3AAE1009FC2B2 /* ContactsModel+CoreDataProperties.swift */; };
+		01C2C49727CE0CE100265575 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2C49627CE0CE100265575 /* MapView.swift */; };
 		01E01ABB27BF82DE0070C7FD /* MeetupAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01ABA27BF82DE0070C7FD /* MeetupAppApp.swift */; };
 		01E01ABD27BF82DE0070C7FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01ABC27BF82DE0070C7FD /* ContentView.swift */; };
 		01E01ABF27BF82E00070C7FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E01ABE27BF82E00070C7FD /* Assets.xcassets */; };
 		01E01AC227BF82E00070C7FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E01AC127BF82E00070C7FD /* Preview Assets.xcassets */; };
 		01E01AC927BF95E80070C7FD /* PersonContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01AC827BF95E80070C7FD /* PersonContacts.swift */; };
-		01E01ACB27BF980B0070C7FD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01ACA27BF980B0070C7FD /* ViewModel.swift */; };
+		01E01ACB27BF980B0070C7FD /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01ACA27BF980B0070C7FD /* ContentViewModel.swift */; };
 		01E01AE727BFA8A60070C7FD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01AE627BFA8A60070C7FD /* DetailView.swift */; };
 		01E01AE927BFA9F10070C7FD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01AE827BFA9F10070C7FD /* ImagePicker.swift */; };
 		01E01AEB27BFAE9E0070C7FD /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E01AEA27BFAE9E0070C7FD /* AddContactView.swift */; };
@@ -24,17 +28,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0111586C27EAF83500F78C8E /* AddContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewModel.swift; sourceTree = "<group>"; };
+		01160E7D27CB7E450037F446 /* Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+		01160E8227CB8EE00037F446 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		0151AF3727C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		0151AF4127C3AA7C009FC2B2 /* ContactsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactsModel.xcdatamodel; sourceTree = "<group>"; };
 		0151AF4327C3AAE1009FC2B2 /* ContactsModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactsModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0151AF4427C3AAE1009FC2B2 /* ContactsModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactsModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		01C2C49627CE0CE100265575 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		01E01AB727BF82DE0070C7FD /* MeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E01ABA27BF82DE0070C7FD /* MeetupAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupAppApp.swift; sourceTree = "<group>"; };
 		01E01ABC27BF82DE0070C7FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		01E01ABE27BF82E00070C7FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01E01AC127BF82E00070C7FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		01E01AC827BF95E80070C7FD /* PersonContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonContacts.swift; sourceTree = "<group>"; };
-		01E01ACA27BF980B0070C7FD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		01E01ACA27BF980B0070C7FD /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		01E01AE627BFA8A60070C7FD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		01E01AE827BFA9F10070C7FD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		01E01AEA27BFAE9E0070C7FD /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
@@ -52,6 +60,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01160E7F27CB80E50037F446 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01E01ABC27BF82DE0070C7FD /* ContentView.swift */,
+				01E01AEA27BFAE9E0070C7FD /* AddContactView.swift */,
+				01E01AE627BFA8A60070C7FD /* DetailView.swift */,
+				01C2C49627CE0CE100265575 /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01160E8027CB80F20037F446 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01E01AC827BF95E80070C7FD /* PersonContacts.swift */,
+				01160E8227CB8EE00037F446 /* LocationFetcher.swift */,
+				01160E7D27CB7E450037F446 /* Picker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01160E8127CB80F80037F446 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01E01ACA27BF980B0070C7FD /* ContentViewModel.swift */,
+				0111586C27EAF83500F78C8E /* AddContactViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		01E01AAE27BF82DE0070C7FD = {
 			isa = PBXGroup;
 			children = (
@@ -71,17 +109,15 @@
 		01E01AB927BF82DE0070C7FD /* MeetupApp */ = {
 			isa = PBXGroup;
 			children = (
+				01E01ABA27BF82DE0070C7FD /* MeetupAppApp.swift */,
+				01160E8127CB80F80037F446 /* ViewModel */,
+				01160E8027CB80F20037F446 /* Model */,
+				01160E7F27CB80E50037F446 /* Views */,
 				0151AF4327C3AAE1009FC2B2 /* ContactsModel+CoreDataClass.swift */,
 				0151AF4427C3AAE1009FC2B2 /* ContactsModel+CoreDataProperties.swift */,
 				0151AF4027C3AA7C009FC2B2 /* ContactsModel.xcdatamodeld */,
-				01E01ABA27BF82DE0070C7FD /* MeetupAppApp.swift */,
-				01E01ACA27BF980B0070C7FD /* ViewModel.swift */,
-				01E01ABC27BF82DE0070C7FD /* ContentView.swift */,
-				01E01AEA27BFAE9E0070C7FD /* AddContactView.swift */,
 				0151AF3727C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift */,
-				01E01AE627BFA8A60070C7FD /* DetailView.swift */,
 				01E01AF327C23CCD0070C7FD /* DataController.swift */,
-				01E01AC827BF95E80070C7FD /* PersonContacts.swift */,
 				01E01AE827BFA9F10070C7FD /* ImagePicker.swift */,
 				01E01ABE27BF82E00070C7FD /* Assets.xcassets */,
 				01E01AC027BF82E00070C7FD /* Preview Content */,
@@ -168,14 +204,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				01E01ABD27BF82DE0070C7FD /* ContentView.swift in Sources */,
-				01E01ACB27BF980B0070C7FD /* ViewModel.swift in Sources */,
+				01E01ACB27BF980B0070C7FD /* ContentViewModel.swift in Sources */,
 				0151AF4227C3AA7C009FC2B2 /* ContactsModel.xcdatamodeld in Sources */,
 				01E01AC927BF95E80070C7FD /* PersonContacts.swift in Sources */,
 				01E01AE927BFA9F10070C7FD /* ImagePicker.swift in Sources */,
+				0111586D27EAF83500F78C8E /* AddContactViewModel.swift in Sources */,
 				0151AF4627C3AAE1009FC2B2 /* ContactsModel+CoreDataProperties.swift in Sources */,
+				01160E8327CB8EE00037F446 /* LocationFetcher.swift in Sources */,
+				01C2C49727CE0CE100265575 /* MapView.swift in Sources */,
 				01E01AF427C23CCD0070C7FD /* DataController.swift in Sources */,
 				0151AF3827C38CDB009FC2B2 /* FileManager-DocumentsDirectory.swift in Sources */,
 				01E01AE727BFA8A60070C7FD /* DetailView.swift in Sources */,
+				01160E7E27CB7E450037F446 /* Picker.swift in Sources */,
 				0151AF4527C3AAE1009FC2B2 /* ContactsModel+CoreDataClass.swift in Sources */,
 				01E01AEB27BFAE9E0070C7FD /* AddContactView.swift in Sources */,
 				01E01ABB27BF82DE0070C7FD /* MeetupAppApp.swift in Sources */,
@@ -312,6 +352,8 @@
 				DEVELOPMENT_TEAM = Q9N7VQ6CR2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We want to take a photo ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please give us permission to track your location";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to library to add photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -342,6 +384,8 @@
 				DEVELOPMENT_TEAM = Q9N7VQ6CR2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We want to take a photo ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please give us permission to track your location";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to library to add photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

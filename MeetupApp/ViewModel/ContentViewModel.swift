@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import MapKit
 
-class ViewModel: ObservableObject {
+class ContentViewModel: ObservableObject {
     @Published var person = [PersonContacts]()
     
     @Published var addButtonTapped = false
@@ -27,5 +28,6 @@ class ViewModel: ObservableObject {
             cameraError = Picker.CameraErrorType(error: error as! Picker.PickerError)
         }
     }
+    
 }
 

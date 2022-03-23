@@ -12,7 +12,7 @@ struct MapView: View {
     var personContact: ContactsModel
     
     //moscow latitude = 55.57, longitude = 37.61
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 55.57, longitude: 37.61), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
+    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 54.99, longitude: 73.36), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
     var body: some View {
         ZStack {

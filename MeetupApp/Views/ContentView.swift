@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @StateObject private var contentViewModel = ViewModel()
+    @StateObject private var contentViewModel = ContentViewModel()
     
     @FetchRequest(sortDescriptors: [SortDescriptor(\.dateAdded)]) var contacts: FetchedResults<ContactsModel>
     @Environment(\.managedObjectContext) var context
